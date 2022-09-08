@@ -1,11 +1,11 @@
-#include<Windows.h>
+п»ї#include<Windows.h>
 #include"resource.h"
 
 BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInst, LPSTR lpCmdLine, INT nCmdShow)
 {
-	//MessageBox(NULL, "Привет! Это окно сообщения", "Заголовок окна", MB_YESNO | MB_ICONINFORMATION | MB_HELP | MB_DEFBUTTON2 | MB_SYSTEMMODAL);
+	//MessageBox(NULL, "РџСЂРёРІРµС‚! Р­С‚Рѕ РѕРєРЅРѕ СЃРѕРѕР±С‰РµРЅРёСЏ", "Р—Р°РіРѕР»РѕРІРѕРє РѕРєРЅР°", MB_YESNO | MB_ICONINFORMATION | MB_HELP | MB_DEFBUTTON2 | MB_SYSTEMMODAL);
 	DialogBoxParam(hInstance, MAKEINTRESOURCE(IDD_DIALOG1), NULL, (DLGPROC)DlgProc, 0);
 	return 0;
 }
@@ -13,9 +13,9 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
 	switch (uMsg)
 	{
-	case WM_INITDIALOG://создаем элемент окна
+	case WM_INITDIALOG://СЃРѕР·РґР°РµРј СЌР»РµРјРµРЅС‚ РѕРєРЅР°
 		break;
-	case WM_COMMAND://обрабатываем сообщение нажатия на кнопки
+	case WM_COMMAND://РѕР±СЂР°Р±Р°С‚С‹РІР°РµРј СЃРѕРѕР±С‰РµРЅРёРµ РЅР°Р¶Р°С‚РёСЏ РЅР° РєРЅРѕРїРєРё
 		switch (LOWORD(wParam))
 		{
 		case IDC_BUTTON_COPY:
@@ -30,13 +30,13 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			SendMessage(hwnd, WM_SETTEXT, 0, (LPARAM)sz_buffer);
 		}
 			break;
-		case IDOK: MessageBox(NULL, "Была нажата кнопка OK", "Info", MB_OK | MB_ICONINFORMATION); break;
+		case IDOK: MessageBox(NULL, "Р‘С‹Р»Р° РЅР°Р¶Р°С‚Р° РєРЅРѕРїРєР° OK", "Info", MB_OK | MB_ICONINFORMATION); break;
 		case IDCANCEL: 
 			EndDialog(hwnd, 0);
 			return FALSE;
 		}
 		break;
-	case WM_CLOSE://закрытие окна
+	case WM_CLOSE://Р·Р°РєСЂС‹С‚РёРµ РѕРєРЅР°
 		EndDialog(hwnd, 0);
 		return FALSE;
 	}
