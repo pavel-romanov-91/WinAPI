@@ -45,4 +45,3 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		return FALSE;
 	}
 	return FALSE;
-}
